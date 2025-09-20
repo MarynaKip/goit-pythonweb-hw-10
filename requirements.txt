@@ -4,3 +4,9 @@ SQLAlchemy
 psycopg2-binary
 python-dotenv
 pydantic[email]
+passlib[bcrypt]
+python-jose[cryptography]
+slowapi
+fastapi-mail
+cloudinary
+python-multipart

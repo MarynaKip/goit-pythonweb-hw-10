@@ -50,13 +50,8 @@ def delete_contact(db: Session, contact_id: int) -> bool:
     db.commit()
     return True
 
-def upcoming_birthdays(db: Session, days: int = 7):
-    """
-    Повертає список словників: {'contact': <Contact>, 'days_until': int, 'next_birthday': date}
-    Логіка: розрахунок наступного дня народження (ігноруємо рік народження).
-    """
+def upcoming_birthdays_from_list(contacts, days: int = 7):
     today = date.today()
-    contacts = db.query(models.Contact).all()
     result = []
     for c in contacts:
         b = c.birthday

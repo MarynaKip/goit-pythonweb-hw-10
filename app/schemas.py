@@ -35,3 +35,20 @@ class ContactBirthday(BaseModel):
     next_birthday: date
     class Config:
         orm_mode = True
+
+class UserCreate(BaseModel):
+    email: EmailStr
+    password: str
+
+class UserOut(BaseModel):
+    id: int
+    email: EmailStr
+    is_verified: bool
+    avatar_url: Optional[str] = None
+    class Config:
+        orm_mode = True
+
+class Token(BaseModel):
+    access_token: str
+    token_type: str
+
